@@ -17,10 +17,9 @@ var cd = new Countdown({
         second: 'Seconds',
     },
     endCallback: function () {
-        console.log('Ended!')
         document.querySelector('.title').textContent = "I'm Dead!";
         document.querySelector('.countdown').style.display = "none";
     },
-    outputFormat: 'year|day|hour|minute|second',
+    outputFormat: window.innerWidth >= 768 ? 'year|day|hour|minute|second' : 'year|day|hour|minute',
 });
 cd.start();

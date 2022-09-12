@@ -18,3 +18,25 @@
     justify-content: center;
     font-size: 1.125rem;
 }
+
+.countDown__interval_cont_year {
+    margin-left: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+    .countDown__cont {
+        flex-direction: column;
+    }
+
+    .countDown__interval_cont_day {
+        margin-left: 13px;
+    }
+
+    .countDown__interval_cont_hour {
+        margin-left: 13px;
+    }
+
+    .countDown__interval_cont_minute {
+        margin-left: 13px;
+    }
+}
