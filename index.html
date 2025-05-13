@@ -1,26 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reality</title>
-
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-
-    <script src="js/countdown.js"></script>
-    <link href="css/countdown.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="css/index.css?version=2">
+    <title>Khandker Aftarul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text for contrast */
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+<body class="bg-gray-900 text-gray-200">
+    <nav class="fixed w-full bg-gray-800 bg-opacity-90 shadow-sm z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-indigo-400">
+                        <i class="fas fa-laptop-code"></i>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#experience" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Experience</a>
+                    <a href="#education" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Education</a>
+                    <a href="#research" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Research</a>
+                    <a href="#projects" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Projects</a>
+                    <a href="#skills" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-indigo-400 transition-colors">Skills</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-indigo-400 focus:outline-none p-2 rounded-md">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 shadow-md">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-indigo-400 transition-colors">Experience</a>
+                <a href="#education" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-indigo-400 transition-colors">Education</a>
+                <a href="#research" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-indigo-400 transition-colors">Research</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-indigo-400 transition-colors">Skills</a>
+            </div>
+        </div>
+    </nav>
 
-<body>
-    <div class="main-container">
-        <h1 class="title">Time Left</h1>
-        <div class="countdown"></div>
-    </div>
-    <script src="js/main.js"> </script>
+    <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-800 bg-pattern-dots dark:bg-pattern-dots-dark bg-opacity-50 dark:bg-opacity-70">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center md:text-left section-fade">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-100 mb-4 leading-tight">Khandker Aftarul Islam</h1>
+                <h2 class="text-xl md:text-2xl font-medium text-indigo-400 mb-6">Software Engineer & Researcher</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto md:mx-0 mb-8 leading-relaxed">
+                    Accomplished DevOps and Backend Engineer with extensive experience in designing and optimizing high-availability systems, leveraging cloud platforms like GCP and AWS, and implementing robust CI/CD pipelines with tools such as Terraform, Kubernetes, and Jenkins. Additionally, I am a dedicated researcher in AI and Bioinformatics, with a focus on applying machine learning to solve complex problems—ranging from attentiveness detection for students with special needs to cancer data analysis. My research contributions reflect my commitment to advancing knowledge at the intersection of technology and science.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="mailto:aftarulislam@gmail.com" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:+8801861567737" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                    <a href="https://github.com/kaimonmoy" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-105">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kaimonmoy/" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-105">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">WORK EXPERIENCE</h2>
+            
+            <div class="space-y-8">
+                <div class="section-fade p-6 bg-gray-800 rounded-lg shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Software Engineer (Backend & DevOps)</h3>
+                    <div class="flex justify-between text-gray-400 text-sm md:text-base mb-2">
+                        <span>Zelf AI, New York, USA (Remote)</span>
+                        <span>May 2024 – Present</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2 text-base">
+                        <li>Developed a video and image processing pipeline using Gemini to ground and analyze ∼100,000 daily social media assets, enabling precise content referencing</li>
+                        <li>Built a high-performance analytics pipeline on Google Cloud Platform (GCP) using Pub/Sub, Cloud Tasks, Cloud Scheduler, Cloud Run, and Artifact Registry, processing ∼5 Million social media contents daily to track client brand sentiment and product insights</li>
+                        <li>Implemented an in-house AI transcription service with faster-whisper model, replacing OpenAI's API, reducing costs by 75% and improving speed and throughput</li>
+                        <li>Automated CI/CD pipelines with GitHub Actions and Infrastructure as Code (IaC) using Terraform to manage VMs, containers, and queues, caching pre-built steps to increase deployment speed by 37%</li>
+                    </ul>
+                </div>
+
+                <div class="section-fade p-6 bg-gray-800 rounded-lg shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Software Engineer II</h3>
+                    <div class="flex justify-between text-gray-400 text-sm md:text-base mb-2">
+                        <span>Optimizely, Dhaka, Bangladesh</span>
+                        <span>September 2022 – April 2024</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2 text-base">
+                        <li>Designed and implemented Emoji Reactions feature using React, Node.js, MongoDB, and WebSocket, boosting user engagement by 65% through real-time content interactions</li>
+                        <li>Engineered All-Day Events feature for Calendar module with Node.js, MongoDB, and React, resolving timezone display issues and streamlining event management for global teams</li>
+                        <li>Developed Recycle Bin feature with soft-delete functionality and 60-day auto-cleanup system, reducing manual asset restoration requests by 90% in collaboration with frontend team</li>
+                    </ul>
+                </div>
+
+                <div class="section-fade p-6 bg-gray-800 rounded-lg shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">AI & Software Engineer</h3>
+                    <div class="flex justify-between text-gray-400 text-sm md:text-base mb-2">
+                        <span>Intelligent Machines Limited, Dhaka, Bangladesh</span>
+                        <span>July 2021 – August 2022</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2 text-base">
+                        <li>Built a Keyword Spotting Model for British American Tobacco using TensorFlow, achieving 87% accuracy for marketing campaign audio analysis, surpassing competing solutions after preprocessing with Spectral Gating</li>
+                        <li>Created a Face-Anti-Spoofing Model for sheba.xyz using Keras, achieving 94% accuracy on video test datasets, overcoming real-time video processing challenges</li>
+                        <li>Deployed a Kubernetes cluster on bare-metal infrastructure with Kubeadm to manage AI models, analytics, backend, frontend, RabbitMQ, and Postgres, ensuring high uptime and scalability via Horizontal Pod Autoscaling (HPA)</li>
+                    </ul>
+                </div>
+
+                <div class="section-fade p-6 bg-gray-800 rounded-lg shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Software Engineer</h3>
+                    <div class="flex justify-between text-gray-400 text-sm md:text-base mb-2">
+                        <span>Technohaven Company Limited, Dhaka, Bangladesh</span>
+                        <span>November 2020 – December 2021</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2 text-base">
+                        <li>Developed smart contracts and backend for Immunodex, a Hyperledger Fabric-based Vaccination Certificate Platform, enhancing security for educational institutions in Hong Kong</li>
+                        <li>Designed and built frontend for StackEd, a verifiable certificate-sharing platform using Hyperledger Fabric, enabling secure credential issuance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-16 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">EDUCATION</h2>
+            
+            <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-1">B.Sc. In Computer Science & Engineering</h3>
+                <div class="text-gray-400 text-sm md:text-base mb-2">
+                    <span>Graduation: May 2022</span>
+                </div>
+                <div class="text-gray-300 text-base mb-1">
+                    Bangladesh University of Engineering and Technology, Dhaka, Bangladesh
+                </div>
+                <p class="font-medium text-gray-300 text-base">CGPA - 3.72/4.00</p>
+                <p class="text-gray-300 mt-2 text-base"><span class="font-medium">Notable Coursework:</span> AI, ML, Computer Security, Computer Architecture, OS, Compiler, OOP, Computer Graphics</p>
+            </div>
+            
+            <div class="section-fade bg-gray-900 rounded-lg shadow-sm mt-6 p-6 border border-gray-700">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-1">Higher Secondary Certificate (HSC), Science</h3>
+                <div class="text-gray-400 text-sm md:text-base mb-2">
+                    <span>2015-2016</span>
+                </div>
+                <div class="text-gray-300 text-base mb-1">
+                    Notre Dame College, Dhaka, Bangladesh
+                </div>
+                <p class="font-medium text-gray-300 text-base">GPA - 5.00/5.00</p>
+            </div>
+            
+            <div class="section-fade bg-gray-900 rounded-lg shadow-sm mt-6 p-6 border border-gray-700">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-1">Secondary School Certificate (SSC), Science</h3>
+                <div class="text-gray-400 text-sm md:text-base mb-2">
+                    <span>2013-2014</span>
+                </div>
+                <div class="text-gray-300 text-base mb-1">
+                    St. Joseph Higher Secondary School, Dhaka, Bangladesh
+                </div>
+                <p class="font-medium text-gray-300 text-base">GPA - 5.00/5.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">RESEARCH EXPERIENCE</h2>
+            
+            <div class="space-y-8">
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                        <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9953878" class="cursor-pointer no-underline text-inherit hover:underline">
+                            Online Detection of Attentiveness of Students with Special Needs
+                        </a>
+                    </h3>
+                    <div class="text-gray-400 text-sm md:text-base mb-2">
+                        <span>ACII 2022</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Role:</span> First Author</p>
+                    <p class="text-gray-300 text-base">Developed a deep learning-based model to predict attentiveness levels of students with Autism Spectrum Disorder (ASD) in online classes, using real-time video data to classify behaviors like gaze and movement</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                        <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9636244" class="cursor-pointer no-underline text-inherit hover:underline">
+                            3D-FFS: Faster 3D object detection with Focused Frustum Search in sensor fusion based networks
+                        </a>
+                    </h3>
+                    <div class="text-gray-400 text-sm md:text-base mb-2">
+                        <span>IROS 2021</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Role:</span> Co-First Author</p>
+                    <p class="text-gray-300 text-base">Proposed 3D-FFS, a sensor fusion-based 3D object detection method, improving inference times by up to 62.80% and reducing memory usage by 58.33%</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                        <a target="_blank" href="https://link.springer.com/chapter/10.1007/978-3-031-34586-9_20" class="cursor-pointer no-underline text-inherit hover:underline">
+                            Dehydration Scan: AI-Assisted Smartphone-Based System for Early Detection of Dehydration
+                        </a>
+                    </h3>
+                    <div class="text-gray-400 text-sm md:text-base mb-2">
+                        <span>PH 2022</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Role:</span> Author</p>
+                    <p class="text-gray-300 text-base">Designed an AI-assisted smartphone app to detect dehydration by analyzing facial landmarks, achieving 76.1% accuracy in identifying dehydration levels</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                        <a target="_blank" href="https://www.biorxiv.org/content/10.1101/2022.09.07.507053v2" class="cursor-pointer no-underline text-inherit hover:underline">
+                            Mathematical Bridge Between Epidemiological and Molecular Data on Cancer and Beyond
+                        </a>
+                    </h3>
+                    <div class="text-gray-400 text-sm md:text-base mb-2">
+                        <span>Under Review</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Role:</span> Author</p>
+                    <p class="text-gray-300 text-base">Developed a mathematical model to integrate epidemiological and molecular data for cancer research, analyzing 21 cancer categories and 14,087 cases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certification" class="py-16 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">CERTIFICATIONS</h2>
+
+            <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                    <a target="_blank" href="https://www.credly.com/badges/a54e3806-ad80-4ca6-8113-ab213255913d" class="cursor-pointer no-underline text-inherit hover:underline">
+                        Google Cloud - Certified Associate Cloud Engineer
+                    </a>
+                </h3>
+                <p class="text-gray-300 mt-2 text-base">Credential validating expertise in deploying applications, monitoring operations, and managing enterprise solutions on Google Cloud Platform</p>
+                <div class="text-gray-400 mt-2 text-sm md:text-base">April 2025</div>
+            </div>
+            
+            <div class="section-fade bg-gray-900 rounded-lg shadow-sm mt-6 p-6 border border-gray-700">
+                <h3 class="text-xl font-semibold text-indigo-400 mb-1">
+                    <a target="_blank" href="https://drive.google.com/file/d/1PSyjv9HJmGPWaNLP8RCuPLncgIFv59yU" class="cursor-pointer no-underline text-inherit hover:underline">
+                        IELTS - Overall Score 8.0
+                    </a>
+                </h3>
+                <p class="text-gray-300 mt-2 text-base">Credential validating proficiency in English</p>
+                <div class="text-gray-400 mt-2 text-sm md:text-base">June 2024</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">PROJECTS</h2>
+            
+            <div class="grid grid-cols-1 gap-8">
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Neolexical Limited</h3>
+                    <div class="text-gray-400 mt-2 md:mt-0 text-sm md:text-base mb-2">January 2021</div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Technologies:</span> Firebase, ReactJS, Flutter</p>
+                    <p class="text-gray-300 text-base">Web application for automating Will and LPA creation in English Law</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Prism - Project Management App</h3>
+                    <div class="text-gray-400 mt-2 md:mt-0 text-sm md:text-base mb-2">January 2021</div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Technologies:</span> Django, ReactJS</p>
+                    <p class="text-gray-300 text-base">Web application for Project Management with Kanban board and Gantt chart</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Letter of Credit on Blockchain</h3>
+                    <div class="text-gray-400 mt-2 md:mt-0 text-sm md:text-base mb-2">August 2020</div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Technologies:</span> Corda, Spring Boot, ReactJS</p>
+                    <p class="text-gray-300 text-base">Blockchain solution for creating, issuing and managing Letter of Credit, Purchase Order and Bill of Lading</p>
+                </div>
+
+                <div class="section-fade bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-700">
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-1">Corona In Bangladesh</h3>
+                    <div class="text-gray-400 mt-2 md:mt-0 text-sm md:text-base mb-2">March 2020</div>
+                    <p class="text-gray-300 mb-2 text-base"><span class="font-medium">Technologies:</span> NodeJS, MongoDB</p>
+                    <p class="text-gray-300 text-base">Website created to serve as an information hub about the Covid-19 epidemic in Bangladesh. Recognized by Bangladesh Government as a reliable Covid-19 related news outlet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-16 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">AWARDS & ACHIEVEMENTS</h2>
+            
+            <div class="space-y-6">
+                <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-1">Silver Medal – International Blockchain Olympiad 2021</h3>
+                        <p class="text-gray-300 mt-2 text-base">Designed a crowd-sourced loan platform for SMEs using Corda & Hyperledger Indy</p>
+                    </div>
+                </div>
+
+                <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-1">Top 50 – AWS reInvent BugBust Challenge 2021</h3>
+                        <p class="text-gray-300 mt-2 text-base">Fixed 100+ bugs across different open-source projects & achieved all 5 milestones</p>
+                    </div>
+                </div>
+
+                <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-1">Winner – National Hackathon on Frontier Technologies 2020</h3>
+                        <p class="text-gray-300 mt-2 text-base">Designed an AI-based system for solving the problem of viral fake news and misinformation</p>
+                    </div>
+                </div>
+
+                <div class="section-fade bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-400 mb-1">Runners Up – BUET CSE Hackathon on Blockchain & Web-Security 2019</h3>
+                        <p class="text-gray-300 mt-2 text-base">Developed a secure REST API backend server using NodeJS and a mortgage platform on Ethereum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-100 mb-8 section-fade">TECHNICAL SKILLS</h2>
+            
+            <div class="space-y-8 section-fade">
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-python text-blue-500 mr-2"></i> Python
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-js-square text-yellow-500 mr-2"></i> JavaScript
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-js text-blue-400 mr-2"></i> TypeScript
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-golang text-blue-300 mr-2"></i> Go
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-java text-red-500 mr-2"></i> Java
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-code text-gray-400 mr-2"></i> C++
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-4">Cloud & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-google text-blue-500 mr-2"></i> GCP
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-aws text-orange-500 mr-2"></i> AWS
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-code-branch text-purple-500 mr-2"></i> Terraform
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-dharmachakra text-blue-500 mr-2"></i> Kubernetes
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-chart-line text-green-500 mr-2"></i> Prometheus
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-docker text-blue-600 mr-2"></i> Docker
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-jenkins text-red-500 mr-2"></i> Jenkins
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-git-alt text-orange-600 mr-2"></i> Git
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-4">Backend & Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-node-js text-green-600 mr-2"></i> NodeJS
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-python text-green-800 mr-2"></i> Django
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-database text-green-500 mr-2"></i> MongoDB
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-database text-blue-500 mr-2"></i> Postgres
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-database text-orange-500 mr-2"></i> MySQL
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-search text-yellow-600 mr-2"></i> Elasticsearch
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-4">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-react text-blue-400 mr-2"></i> ReactJS
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fab fa-vuejs text-blue-400 mr-2"></i> VueJS
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-400 mb-4">AI</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-brain text-orange-400 mr-2"></i> PyTorch
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-brain text-blue-400 mr-2"></i> TensorFlow
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-hexagon-nodes text-blue-400 mr-2"></i> Gemini
+                        </span>
+                        <span class="flex items-center px-4 py-2 bg-gray-800 text-gray-300 rounded-md border border-gray-700">
+                            <i class="fas fa-hexagon-nodes text-blue-400 mr-2"></i> OpenAI
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-lg font-medium">Khandker Aftarul Islam</h3>
+                    <p class="text-gray-400 mt-1">Software Engineer & Researcher</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="mailto:aftarulislam@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:+8801861567737" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                    <a href="https://github.com/kaimonmoy" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kaimonmoy/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-400 text-sm">
+                &copy; 2025 Khandker Aftarul Islam. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Scroll animation for sections
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        const fadeElements = document.querySelectorAll('.section-fade');
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
